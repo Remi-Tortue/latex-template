@@ -1,11 +1,55 @@
 \documentclass{article}
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
 
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+
+% for code
+\usepackage{listings}
+\usepackage{xcolor}
+
+\setlength{\floatsep}{15pt}       % space between two floats
+\setlength{\textfloatsep}{20pt}   % space between float and text (most common)
+\setlength{\intextsep}{15pt}      % space for [h] placed figures
+
+\graphicspath{ {./img/} }
+
+\newcounter{customboxnumber}
+\newtcolorbox[use counter=customboxnumber]{custombox}[1][]{%
+colback=blue!5!white,colframe=blue!30,fonttitle=\bfseries,
+title=#1~\thetcbcounter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Latex project template}
-\author{Côme Perrot}
+\author{Rémi Porée}
 \date{}
 
 \begin{document}
 
 \maketitle
 
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+\listoffigures
+\listoftables
+\pagenumbering{arabic}
+
+\include{body/abstract}
+
+\nocite{*}
+\bibliographystyle{IEEEtran} % We choose the "plain" reference style
+\bibliography{references}
 \end{document}
